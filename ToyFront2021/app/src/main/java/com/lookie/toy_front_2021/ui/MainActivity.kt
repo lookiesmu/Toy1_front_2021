@@ -1,7 +1,8 @@
-package com.lookie.toy_front_2021
+package com.lookie.toy_front_2021.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lookie.toy_front_2021.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
