@@ -4,6 +4,13 @@
 # 현재 개발 진행 사항
 [Link](./ToyFront2021/README.md)
 
+# UI 를 어떻게 만들면 될까요?
+1. 다음 사진과 같이 new destination 을 클릭한다 ![image](https://user-images.githubusercontent.com/79887707/131466109-4775213e-91ab-4d37-bd1a-1b305719f197.png)
+2. 원하는 Fragment 를 선택한다(유용한게 많아요!) ![image](https://user-images.githubusercontent.com/79887707/131466211-3de95d45-fec5-4e27-a10f-e53644eb435b.png)
+3. 선택한 이름으로 만들어진 Fragment와 xml 을 작성해나간다!(예시) ![image](https://user-images.githubusercontent.com/79887707/131466360-1bdb9e33-5426-4a4a-a069-2bbaba04754e.png)
+
+
+
 # Data 를 어떻게 저장해야 할까요?
 1. 우리는 핸드폰에 저장해야 할 모든 데이터를 구조화된 것으로는 **Room** 를 사용하고 
 2. key value 의 형태로 저장해야 할 데이터는 __Jetpack Preferences__ 를 사용합니다.
