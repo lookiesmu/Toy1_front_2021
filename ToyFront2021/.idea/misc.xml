@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_1.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/loading_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
