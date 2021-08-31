@@ -1,6 +1,8 @@
 ﻿# To Me의 Frontend 저장소 💌
 
 [To Me 개발 노션 링크](https://www.notion.so/To-me-901869b392db44209a32f1d441759fd9)
+# 현재 개발 진행 사항
+[Link](./ToyFront2021/README.md)
 
 # Data 를 어떻게 저장해야 할까요?
 1. 우리는 핸드폰에 저장해야 할 모든 데이터를 구조화된 것으로는 **Room** 를 사용하고 
