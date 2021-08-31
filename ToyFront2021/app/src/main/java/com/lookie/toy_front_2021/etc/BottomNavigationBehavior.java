@@ -1,4 +1,4 @@
-package com.lookie.toy_front_2021;
+package com.lookie.toy_front_2021.etc;
 
 import android.content.Context;
 import android.util.AttributeSet;
