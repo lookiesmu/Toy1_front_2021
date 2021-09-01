@@ -12,15 +12,27 @@
         tools:layout="@layout/loading_fragment" >
         <action
             android:id="@+id/action_loadingFragment_to_todayQuestionFragment"
-            app:destination="@id/blankFragment" />
+            app:destination="@id/TodayQuestionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/TodayQuestionFragment"
         android:name="com.lookie.toy_front_2021.ui.TodayQuestionFragment"
-        android:label="fragment_blank"
+        android:label="today_question_fragment"
         tools:layout="@layout/today_question_fragment" >
         <action
-            android:id="@+id/action_blankFragment_to_loadingFragment2"
+            android:id="@+id/action_todayQuestionFragment_to_loadingFragment"
             app:destination="@id/loadingFragment" />
+        <action
+            android:id="@+id/action_TodayQuestionFragment_to_answerListFragment"
+            app:destination="@id/answerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/answerListFragment"
+        android:name="com.lookie.toy_front_2021.ui.AnswerListFragment"
+        android:label="answer_list_fragment"
+        tools:layout="@layout/answer_list_fragment" >
+        <action
+            android:id="@+id/action_answerListFragment_to_TodayQuestionFragment"
+            app:destination="@id/TodayQuestionFragment" />
     </fragment>
 </navigation>
