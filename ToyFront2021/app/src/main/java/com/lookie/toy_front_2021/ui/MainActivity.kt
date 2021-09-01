@@ -6,6 +6,9 @@ import android.view.View
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.navigation.NavigationBarView
 import com.lookie.toy_front_2021.R
@@ -20,9 +23,16 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var nestedScrollView: NestedScrollView
 
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        navController = navHostFragment.navController
 
         viewBinding()
         viewHandler()
@@ -54,10 +64,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.page_2 -> {
                     // page_1 이 선택 되었을 때 반응
                     Log.d("MainActivity", "page2이 선택되었습니다.")
+                    navController.navigate(R.id.action_loadingFragment_to_todayQuestionFragment)
+
                 }
                 R.id.page_3 -> {
                     // page_1 이 선택 되었을 때 반응
                     Log.d("MainActivity", "page3이 선택되었습니다.")
+
                 }
                 R.id.page_4 -> {
                     // page_1 이 선택 되었을 때 반응

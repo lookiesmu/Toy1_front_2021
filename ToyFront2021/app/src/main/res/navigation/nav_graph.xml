@@ -9,5 +9,18 @@
         android:id="@+id/loadingFragment"
         android:name="com.lookie.toy_front_2021.ui.LoadingFragment"
         android:label="loading_fragment"
-        tools:layout="@layout/loading_fragment" />
+        tools:layout="@layout/loading_fragment" >
+        <action
+            android:id="@+id/action_loadingFragment_to_todayQuestionFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.lookie.toy_front_2021.ui.TodayQuestionFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/today_question_fragment" >
+        <action
+            android:id="@+id/action_blankFragment_to_loadingFragment2"
+            app:destination="@id/loadingFragment" />
+    </fragment>
 </navigation>

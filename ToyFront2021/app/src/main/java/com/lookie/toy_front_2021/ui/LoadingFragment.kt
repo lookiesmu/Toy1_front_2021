@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.lookie.toy_front_2021.R
 import com.lookie.toy_front_2021.viewmodel.LoadingViewModel
@@ -24,15 +26,17 @@ class LoadingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d("LoadingFragment", "로딩프레그먼트 시작")
-        // 로딩 화면이므로 appbar 와 bottom nav를 숨깁니다.
-        (activity as MainActivity).toggleBar(on = false)
-        return inflater.inflate(R.layout.loading_fragment, container, false)
+        // 로딩 화면이므로 와 bottom nav를 숨깁니다.
+//        (activity as MainActivity).toggleBar(on = false)
+        val view = inflater.inflate(R.layout.loading_fragment, container, false)
+
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LoadingViewModel::class.java)
-
     }
 
 }
