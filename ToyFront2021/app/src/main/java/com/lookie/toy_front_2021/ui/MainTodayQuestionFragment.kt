@@ -1,12 +1,10 @@
 package com.lookie.toy_front_2021.ui
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.lookie.toy_front_2021.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,15 +14,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [AnswerListFragment.newInstance] factory method to
+ * Use the [MainTodayQuestionFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AnswerListFragment : Fragment() {
+class MainTodayQuestionFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var param1 : String? = null
+    private var param2 : String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -33,20 +31,11 @@ class AnswerListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater : LayoutInflater, container : ViewGroup?,
+        savedInstanceState : Bundle?
+    ) : View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.answer_list_fragment, container, false)
-
-        view.findViewById<TextView>(R.id.jan).apply {
-            setOnClickListener {
-                it.findNavController().navigate(R.id.action_answerListFragment_to_TodayQuestionFragment)
-            }
-        }
-
-
-        return view
+        return inflater.inflate(R.layout.main_today_question_fragment, container, false)
     }
 
     companion object {
@@ -56,12 +45,12 @@ class AnswerListFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment AnswerListFragment.
+         * @return A new instance of fragment MainTodayQuestionFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AnswerListFragment().apply {
+        fun newInstance(param1 : String, param2 : String) =
+            MainTodayQuestionFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

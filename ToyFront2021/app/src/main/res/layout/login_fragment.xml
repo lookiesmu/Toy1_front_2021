@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:text="로그인"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/id"
+        android:background="#DFD5D5"
+        android:hint="아이디를 입력해 주세요"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:background="#DFD5D5"
+        android:hint="비밀번호를 입력해 주세요"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/loginTo"
+        android:text="로그인"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="#EA9E9E"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/joinTo"
+        android:text="회원가입 하러가기"
+        android:textSize="20dp"
+        android:textColor="#C16D6D"
+        android:gravity="center"
+        android:layout_margin="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

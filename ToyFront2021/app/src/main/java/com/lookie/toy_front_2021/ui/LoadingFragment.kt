@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.lookie.toy_front_2021.R
@@ -29,6 +30,12 @@ class LoadingFragment : Fragment() {
         // 로딩 화면이므로 와 bottom nav를 숨깁니다.
 //        (activity as MainActivity).toggleBar(on = false)
         val view = inflater.inflate(R.layout.loading_fragment, container, false)
+
+        view.findViewById<TextView>(R.id.GoToId).apply {
+            setOnClickListener {
+                it.findNavController().navigate(R.id.action_loadingFragment_to_login)
+            }
+        }
 
         return view
     }

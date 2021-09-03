@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.378125" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_1.xml" value="0.378125" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_3.xml" value="0.378125" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_4.xml" value="0.378125" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/fragment_blank.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/fragment_today_question_fragment_list.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/join_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/loading_fragment.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/login_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/main_today_question_fragment.xml" value="0.2046875" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/my_question_list_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/today_question_fragment.xml" value="0.16" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_1.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/answer_list_fragment.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/fragment_blank.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/loading_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/today_question_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/today_question_fragment.xml" value="0.21014492753623187" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36614583333333334" />
       </map>
     </option>

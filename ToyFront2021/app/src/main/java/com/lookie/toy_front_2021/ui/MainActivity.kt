@@ -64,9 +64,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.page_2 -> {
                     // page_1 이 선택 되었을 때 반응
                     Log.d("MainActivity", "page2이 선택되었습니다.")
-                    if (navController.currentDestination?.label != "today_question_fragment") {
-                        navController.navigate(R.id.action_loadingFragment_to_todayQuestionFragment)
-                    }
+                    navController.navigate(R.id.action_loadingFragment_to_todayQuestionFragment)
 
                 }
                 R.id.page_3 -> {

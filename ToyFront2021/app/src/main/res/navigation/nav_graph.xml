@@ -10,29 +10,42 @@
         android:name="com.lookie.toy_front_2021.ui.LoadingFragment"
         android:label="loading_fragment"
         tools:layout="@layout/loading_fragment" >
+
         <action
             android:id="@+id/action_loadingFragment_to_todayQuestionFragment"
-            app:destination="@id/TodayQuestionFragment" />
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_loadingFragment_to_login"
+            app:destination="@id/login" />
     </fragment>
+
     <fragment
-        android:id="@+id/TodayQuestionFragment"
+
+        android:id="@+id/blankFragment"
         android:name="com.lookie.toy_front_2021.ui.TodayQuestionFragment"
-        android:label="today_question_fragment"
+        android:label="fragment_blank"
         tools:layout="@layout/today_question_fragment" >
         <action
-            android:id="@+id/action_todayQuestionFragment_to_loadingFragment"
-            app:destination="@id/loadingFragment" />
-        <action
-            android:id="@+id/action_TodayQuestionFragment_to_answerListFragment"
-            app:destination="@id/answerListFragment" />
+            android:id="@+id/action_blankFragment_to_mainTodayQuestionFragment"
+            app:destination="@id/mainTodayQuestionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/answerListFragment"
-        android:name="com.lookie.toy_front_2021.ui.AnswerListFragment"
-        android:label="answer_list_fragment"
-        tools:layout="@layout/answer_list_fragment" >
+        android:id="@+id/mainTodayQuestionFragment"
+        android:name="com.lookie.toy_front_2021.ui.MainTodayQuestionFragment"
+        android:label="main_today_question_fragment"
+        tools:layout="@layout/main_today_question_fragment" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.lookie.toy_front_2021.ui.Login"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_answerListFragment_to_TodayQuestionFragment"
-            app:destination="@id/TodayQuestionFragment" />
+            android:id="@+id/action_login_to_join"
+            app:destination="@id/join" />
     </fragment>
+    <fragment
+        android:id="@+id/join"
+        android:name="com.lookie.toy_front_2021.ui.Join"
+        android:label="join_fragment"
+        tools:layout="@layout/join_fragment" />
 </navigation>
