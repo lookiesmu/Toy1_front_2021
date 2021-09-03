@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="top|center">
@@ -9,26 +8,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:text="8/24"
-            android:textSize="24sp"
             android:id="@+id/date"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="8/24"
+            android:textSize="24sp" />
+
         <TextView
-            android:text="dkjfklskfjkdlfjdsklfdkdjfkslfslfjksjflskjfksjfslfjskjfksjfkslkjdfksjfkslfjkjfslfs"
             android:id="@+id/question_s"
-            android:textSize="32sp"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="dkjfklskfjkdlfjdsklfdkdjfkslfslfjksjflskjfksjfslfjskjfksjfkslkjdfksjfkslfjkjfslfs"
+            android:textSize="32sp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
+
         <View
             android:layout_width="300dp"
             android:layout_height="2dp"
             android:layout_gravity="bottom"
-            android:background="#303030"/>
+            android:background="#303030" />
     </LinearLayout>
 
 
