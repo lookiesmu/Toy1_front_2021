@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/mypage_fragment"
         android:enabled="true"
         android:icon="@drawable/ic_page_1"
         android:title="@string/page_label_1"/>
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/question_fragment"
         android:enabled="true"
-        android:icon="@drawable/ic_page_2"
+        android:icon="@drawable/ic_pngegg"
         android:title="@string/page_label_2"/>
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/answer_list_fragment"
         android:enabled="true"
         android:icon="@drawable/ic_page_3"
         android:title="@string/page_label_3"/>
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/profile_fragment"
         android:enabled="true"
         android:icon="@drawable/ic_page_4"
         android:title="@string/page_label_4"/>

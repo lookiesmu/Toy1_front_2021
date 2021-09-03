@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.LoadingFragment">
+    tools:context=".ui.Loading">
     <!-- 앱 바가 필요 할떄 아래를  사용합니다 -->
     <!--    <com.google.android.material.appbar.AppBarLayout-->
     <!--        android:id="@+id/app_bar"-->
@@ -49,13 +49,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:indeterminate="true" />
-
-    <TextView
-        android:id="@+id/GoToId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="로그인"
-        android:textSize="16sp"
-        android:textStyle="bold" />
 
 </LinearLayout>

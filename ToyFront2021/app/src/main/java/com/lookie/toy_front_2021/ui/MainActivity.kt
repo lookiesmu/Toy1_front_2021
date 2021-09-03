@@ -3,30 +3,34 @@ package com.lookie.toy_front_2021.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.lookie.toy_front_2021.R
+import com.lookie.toy_front_2021.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
+    // https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ko
+    private val model : MainViewModel by viewModels()
+
     // https://material.io/components/bottom-navigation/android#using-bottom-navigation
-    lateinit var bottomNav : NavigationBarView
+    private lateinit var bottomNav : BottomNavigationView
 
-//    // https://material.io/components/app-bars-top/android#regular-top-app-bar
-//    lateinit var appbar: AppBarLayout
+    private lateinit var nestedScrollView : NestedScrollView
 
-    lateinit var nestedScrollView : NestedScrollView
-
-    lateinit var navController : NavController
+    private lateinit var navController : NavController
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
@@ -50,31 +54,9 @@ class MainActivity : AppCompatActivity() {
     뷰에 대한 리스너를 설정하기 위한 핸들러를 만드는 공간 입니다.
      */
     private fun viewHandler() {
-
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.page_1 -> {
-                    // page_1 이 선택 되었을 때 반응
-                    Log.d("MainActivity", "page1이 선택되었습니다.")
-                    // bottomNav.selectedItemId = R.id.page_1
-
-                }
-                R.id.page_2 -> {
-                    // page_1 이 선택 되었을 때 반응
-                    Log.d("MainActivity", "page2이 선택되었습니다.")
-                    navController.navigate(R.id.action_loadingFragment_to_todayQuestionFragment)
-
-                }
-                R.id.page_3 -> {
-                    // page_1 이 선택 되었을 때 반응
-                    Log.d("MainActivity", "page3이 선택되었습니다.")
-
-                }
-                R.id.page_4 -> {
-                    // page_1 이 선택 되었을 때 반응
-                    Log.d("MainActivity", "page4이 선택되었습니다.")
-                }
-            }
+        bottomNav.setupWithNavController(navController)
+        bottomNav.setOnItemSelectedListener {
+            it.onNavDestinationSelected(navController)
             true
         }
     }

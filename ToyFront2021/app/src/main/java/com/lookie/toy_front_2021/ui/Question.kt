@@ -7,15 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.lookie.toy_front_2021.R
-import com.lookie.toy_front_2021.viewmodel.MainViewModel
 
-class Login : Fragment() {
 
-    private val model : MainViewModel by activityViewModels()
+class Question : Fragment() {
 
     override fun onCreateView(
         inflater : LayoutInflater, container : ViewGroup?,
@@ -23,16 +20,16 @@ class Login : Fragment() {
     ) : View? {
 
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_question, container, false)
 
-        view.findViewById<TextView>(R.id.joinTo).apply {
+        view.findViewById<TextView>(R.id.today).apply {
             setOnClickListener {
-                it.findNavController().navigate(R.id.action_login_to_join)
+                it.findNavController()
+                    .navigate(R.id.action_question_to_answer)
             }
         }
 
         back()
-
 
         return view
     }
@@ -54,5 +51,4 @@ class Login : Fragment() {
                 }
             })
     }
-
 }
