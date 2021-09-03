@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.378125" />
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_1.xml" value="0.378125" />
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_3.xml" value="0.378125" />
@@ -16,6 +17,19 @@
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/main_today_question_fragment.xml" value="0.2046875" />
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/my_question_list_fragment.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/82107/Desktop/yeeun/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/today_question_fragment.xml" value="0.16" />
+=======
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/drawable/list_edge.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/drawable/list_line.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/answer_list_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/fragment_answer_list_detail.xml" value="0.22" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/fragment_search_list.xml" value="0.22" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/fragment_search_main.xml" value="0.22" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/list_view.xml" value="0.1" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/list_view_answerlist.xml" value="0.1" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/loading_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/Yunji Kim/AndroidStudioProjects/Toy1_front_2021-master/ToyFront2021/app/src/main/res/layout/today_question_fragment.xml" value="0.1" />
+>>>>>>> 90ecdc8c3af2ef7ba0c0b402d004098fc62a6237
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/drawable/ic_page_1.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/csjav/Desktop/lookie/Toy1_front_2021/ToyFront2021/app/src/main/res/layout/fragment_blank.xml" value="0.36614583333333334" />

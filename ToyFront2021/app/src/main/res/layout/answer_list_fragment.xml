@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="left"
+        android:textSize="30sp"
+        android:text="2021년의 기록" />
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="#303030"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/jan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/jan_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/jan_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/feb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/feb_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/feb_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/mar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/mar_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/mar_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/apr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/apr_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/apr_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/may"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/may_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/may_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/jun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/jun_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/jun_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/jul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/jul_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/jul_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/aug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/aug_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/aug_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/sep_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/sep_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/oct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/oct_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/oct_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/nov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/nov_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/nov_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12월"
+            android:layout_gravity="start|bottom"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/dec_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="공개"
+            android:background="@drawable/list_edge"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dec_list"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#68000000"
+        android:textSize="12sp" />
+
+
+
+</LinearLayout>
