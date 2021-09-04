@@ -12,13 +12,25 @@ class MainViewModel : ViewModel() {
 
     var questions : MutableLiveData<MutableList<Question>> = MutableLiveData(mutableListOf())
         set(value) {
-            field = value
+            if (field.value!!.isEmpty()) {
+                field = value
+            }
         }
 
     var users : MutableLiveData<MutableList<UserReceive>> = MutableLiveData(mutableListOf())
         set(value) {
-            field = value
+            if (field.value!!.isEmpty()) {
+                field = value
+            }
         }
+
+    fun loading(after : (Boolean) -> Unit) {
+        viewModelScope.launch {
+            delay(3000L) // 서버 체크하는 시간
+            // TODO questions 와 users 동시 요청
+            after(true) // 무조건 서버 응답이 있음
+        }
+    }
 
     fun login(before : () -> Unit, after : (Boolean) -> Unit) {
         viewModelScope.launch {
@@ -47,8 +59,10 @@ class MainViewModel : ViewModel() {
     fun questions(before : () -> Unit, after : (Boolean) -> Unit) {
         viewModelScope.launch {
             before()
-            delay(3000) // 네트워크 콜
-            // TODO 속성 questions 에 set
+            if (questions.value!!.isEmpty()) {
+                delay(3000) // 네트워크 콜
+                // TODO 속성 questions 에 set
+            }
             after(true) // 일단 무조건 성공임을 표시함.
         }
     }
@@ -56,10 +70,13 @@ class MainViewModel : ViewModel() {
     fun users(before : () -> Unit, after : (Boolean) -> Unit) {
         viewModelScope.launch {
             before()
-            delay(3000) // 네트워크 콜
-            // TODO 속성 users 에 set
+            if (questions.value!!.isEmpty()) {
+                delay(3000) // 네트워크 콜
+                // TODO 속성 users 에 set
+            }
             after(true) // 일단 무조건 성공임을 표시함.
         }
     }
+
 
 }
