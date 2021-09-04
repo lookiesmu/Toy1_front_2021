@@ -3,26 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/today"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="40dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/primary"
+        android:elevation="8dp"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal"
+        android:text="오늘의 질문 >"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/today"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="30dp"
-            android:layout_marginTop="40dp"
-            android:background="#FAE6E2"
-            android:orientation="horizontal"
-            android:text="오늘의 질문 >"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/past"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/primary"
+        android:elevation="8dp"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal"
+        android:text="과거의 질문 >"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-    </LinearLayout>
 </LinearLayout>

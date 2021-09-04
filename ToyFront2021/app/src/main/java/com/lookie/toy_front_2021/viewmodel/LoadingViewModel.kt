@@ -7,10 +7,10 @@ import kotlinx.coroutines.launch
 
 class LoadingViewModel : ViewModel() {
 
-    fun loading(after: () -> Unit) {
+    fun loading(after: (Boolean) -> Unit) {
         viewModelScope.launch {
             delay(3000L) // 서버 체크하는 시간
-            after()
+            after(true) // 무조건 서버 응답이 있음
         }
     }
 }

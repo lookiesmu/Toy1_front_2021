@@ -7,7 +7,6 @@
     <string name="page_label_4">프로필</string>
     <string name="logo_desc">다른 사람이 아닌 나를 알아가는</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pref_user_key">com.lookie.toy_front_2021.user_key</string>
     <string name="question">오늘의 질문</string>
 </resources>

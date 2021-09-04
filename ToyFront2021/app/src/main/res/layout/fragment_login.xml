@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
@@ -12,56 +14,56 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="로그인"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/id"
+        android:id="@+id/login_id"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:background="#DFD5D5"
         android:ems="10"
         android:gravity="center"
         android:hint="아이디를 입력해 주세요"
-        android:padding="10dp" />
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/login_pw"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:background="#DFD5D5"
         android:ems="10"
         android:gravity="center"
         android:hint="비밀번호를 입력해 주세요"
-        android:padding="10dp" />
+        android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/loginTo"
+        android:id="@+id/login_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginEnd="70dp"
         android:background="#EA9E9E"
         android:gravity="center"
         android:text="로그인"
         android:textColor="#ffffff"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/joinTo"
+        android:id="@+id/join_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:gravity="center"
         android:text="회원가입 하러가기"
         android:textColor="#C16D6D"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
 </LinearLayout>

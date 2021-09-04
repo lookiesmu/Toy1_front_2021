@@ -8,6 +8,8 @@ import io.ktor.client.features.json.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 
+const val url = "https://toy1-back.herokuapp.com"
+
 val client = HttpClient(CIO) {
     install(JsonFeature) {
         serializer = GsonSerializer() {
@@ -19,9 +21,9 @@ val client = HttpClient(CIO) {
 }
 
 suspend fun postUser(user : UserSend) : UserReceive {
-    val userReceive = client.post<UserReceive>("https://localhost:8080/admin/") {
+    val userReceive = client.post<UserReceive>("${url}/signup/user") {
         contentType(ContentType.Application.Json)
-        body = user // UserSend(name = "임혁", "01050931539", "kdb0841", "zxcvb2")
+        body = user
     }
     return userReceive
 }

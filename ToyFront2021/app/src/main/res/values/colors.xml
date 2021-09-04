@@ -10,4 +10,11 @@
 
     <color name="main">#F5F0ED</color>
     <color name="primary2">#F6BCB1</color>
+
+    <color name="primary">#FAE6E2</color>
+    <color name="primary3">#EA9E9E</color>
+    <color name="font">#736A68</color>
+    <color name="back">#DFD5D5</color>
+
+    <color name="red">#A43354</color>
 </resources>

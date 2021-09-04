@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -17,6 +19,11 @@ class Login : Fragment() {
 
     private val model : MainViewModel by activityViewModels()
 
+
+    private lateinit var id : EditText
+    private lateinit var pw : EditText
+    private lateinit var screen : View
+
     override fun onCreateView(
         inflater : LayoutInflater, container : ViewGroup?,
         savedInstanceState : Bundle?
@@ -24,18 +31,45 @@ class Login : Fragment() {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
+        viewBinding(view)
+        viewHandler(view)
+        back()
+        return view
+    }
 
-        view.findViewById<TextView>(R.id.joinTo).apply {
+    private fun viewBinding(v : View) {
+        id = v.findViewById(R.id.login_id)
+        pw = v.findViewById(R.id.login_pw)
+        screen = v
+    }
+
+    private fun viewHandler(v : View) {
+        v.findViewById<TextView>(R.id.join_to).apply {
             setOnClickListener {
                 it.findNavController().navigate(R.id.action_login_to_join)
             }
         }
-
-        back()
-
-
-        return view
+        v.findViewById<TextView>(R.id.login_to).apply {
+            setOnClickListener {
+                val main = (activity as MainActivity)
+                model.login(before = {
+                    main.toggleLoading(true)
+                    screen.alpha = 0.3f
+                }, after = { b ->
+                    main.toggleLoading(false)
+                    if (b) { // 로그인 성공시
+                        main.toggleBar(true)
+                        Toast.makeText(context, "어서오세요!", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_login_to_question)
+                    } else { // 로그인 실패시
+                        screen.alpha = 1f
+                        Toast.makeText(context, "로그인 실패!", Toast.LENGTH_SHORT).show()
+                    }
+                })
+            }
+        }
     }
+
 
     private fun back() {
         requireActivity().onBackPressedDispatcher.addCallback(

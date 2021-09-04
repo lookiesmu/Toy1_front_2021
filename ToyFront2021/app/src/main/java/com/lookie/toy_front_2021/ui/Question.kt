@@ -21,17 +21,22 @@ class Question : Fragment() {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_question, container, false)
+        viewHandler(view)
+        back()
+        return view
+    }
 
-        view.findViewById<TextView>(R.id.today).apply {
+    private fun viewHandler(v : View) {
+        v.findViewById<TextView>(R.id.today).apply {
             setOnClickListener {
-                it.findNavController()
-                    .navigate(R.id.action_question_to_answer)
+                findNavController().navigate(R.id.action_question_to_answer)
             }
         }
-
-        back()
-
-        return view
+        v.findViewById<TextView>(R.id.past).apply {
+            setOnClickListener {
+                findNavController().navigate(R.id.action_question_to_search)
+            }
+        }
     }
 
     private fun back() {
