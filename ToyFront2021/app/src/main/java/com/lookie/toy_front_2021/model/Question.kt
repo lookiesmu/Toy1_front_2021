@@ -1,8 +1,8 @@
 package com.lookie.toy_front_2021.model
 
 data class Question(
-    val createdDate: Long,
-    val updateDate: Long,
+    val createdDate: String,
+    val updateDate: String,
     val q_num: Long,
     val content: String,
     val user: UserReceive,
@@ -10,8 +10,13 @@ data class Question(
 )
 
 data class Answer(
-    val createdDate: Long,
-    val updateDate: Long,
+    val createdDate: String,
+    val updateDate: String,
     val a_num: Long,
     val content: String
+)
+
+data class AnswerSimple(
+    val content: String,
+    val u_num: Long,
 )

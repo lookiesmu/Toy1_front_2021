@@ -1,14 +1,21 @@
 package com.lookie.toy_front_2021.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lookie.toy_front_2021.model.Question
 import com.lookie.toy_front_2021.model.UserReceive
+import com.lookie.toy_front_2021.model.UserSend
+import com.lookie.toy_front_2021.model.UserSimple
+import com.lookie.toy_front_2021.network.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
+    var token : String? = null
+
+    var currentQNUm: Long? = null
 
     var questions : MutableLiveData<MutableList<Question>> = MutableLiveData(mutableListOf())
         set(value) {
@@ -24,27 +31,66 @@ class MainViewModel : ViewModel() {
             }
         }
 
-    fun loading(after : (Boolean) -> Unit) {
+    fun loading(username : String, password : String, after : (Boolean) -> Unit) {
         viewModelScope.launch {
-            delay(3000L) // 서버 체크하는 시간
-            // TODO questions 와 users 동시 요청
-            after(true) // 무조건 서버 응답이 있음
+            Log.d("MainViewModel", "${username}:${password}")
+            if (username != "." && password != ".") {
+                try {
+                    token = postLogin(UserSimple(username, password))
+                    val q = getQuestions(token = token!!)
+                    Log.d("MainViewModel", "q: ${q.size}")
+                    val u = getUsers(token = token!!)._embedded.userList
+                    Log.d("MainViewModel", "u: ${u.size}")
+                    questions.value?.addAll(q)
+                    users.value?.addAll(u)
+                    after(true)
+                } catch (e : Exception) {
+                    after(false)
+                    e.printStackTrace()
+                    return@launch
+                }
+            } else {
+                after(true)
+            }
         }
     }
 
-    fun login(before : () -> Unit, after : (Boolean) -> Unit) {
+    fun login(before : () -> Unit, id : String, pw : String, after : (Boolean) -> Unit) {
         viewModelScope.launch {
             before()
-            delay(3000) // 네트워크 콜
-            after(true) // 일단 무조건 성공임을 표시함.
+            Log.d("MainViewModel", "login ${id}:${pw}")
+            try {
+                token = postLogin(UserSimple(username = id, password = pw))
+                questions.value?.addAll(getQuestions(token = token!!))
+                users.value?.addAll(getUsers(token = token!!)._embedded.userList)
+                after(true)
+            } catch (e : Exception) {
+                e.printStackTrace()
+                after(false)
+            }
         }
     }
 
-    fun join(before : () -> Unit, after : (Boolean) -> Unit) {
+    fun join(
+        before : () -> Unit,
+        name : String,
+        phone : String,
+        id : String,
+        pw1 : String,
+        after : (Boolean) -> Unit
+    ) {
         viewModelScope.launch {
             before()
-            delay(3000) // 네트워크 콜
-            after(true) // 일단 무조건 성공임을 표시함.
+            try {
+                postUser(UserSend(name = name, phone = phone, username = id, password = pw1))
+                token = postLogin(UserSimple(username = id, password = pw1))
+                questions.value?.addAll(getQuestions(token = token!!))
+                users.value?.addAll(getUsers(token = token!!)._embedded.userList)
+                after(true)
+            } catch (e : Exception) {
+                e.printStackTrace()
+                after(false)
+            }
         }
     }
 
@@ -75,6 +121,22 @@ class MainViewModel : ViewModel() {
                 // TODO 속성 users 에 set
             }
             after(true) // 일단 무조건 성공임을 표시함.
+        }
+    }
+
+    fun delete(before : () -> Unit, after : (Boolean) -> Unit, username : String) {
+        viewModelScope.launch {
+            before()
+            try {
+                deleteUser(
+                    u_num = users.value?.find { userReceive -> userReceive.username == username }?.u_num!!,
+                    token = token!!
+                )
+                after(true)
+            } catch (e : Exception) {
+                e.printStackTrace()
+                after(false)
+            }
         }
     }
 

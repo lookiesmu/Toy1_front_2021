@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -22,6 +23,8 @@ class AnswerList : Fragment() {
     private lateinit var screen : View
     private lateinit var adapter : AnswerListAdapter
 
+    val args : AnswerListArgs by navArgs()
+
     override fun onCreateView(
         inflater : LayoutInflater, container : ViewGroup?,
         savedInstanceState : Bundle?
@@ -29,6 +32,7 @@ class AnswerList : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_answer_list, container, false)
         (activity as MainActivity).toggleCalendar(true)
+        model.currentQNUm = args.qNum
 
         viewBinding(view)
         recycler.layoutManager = LinearLayoutManager(view.context)

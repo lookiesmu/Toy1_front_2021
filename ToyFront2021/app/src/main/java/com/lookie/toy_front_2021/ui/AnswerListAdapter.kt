@@ -1,5 +1,6 @@
 package com.lookie.toy_front_2021.ui
 
+import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

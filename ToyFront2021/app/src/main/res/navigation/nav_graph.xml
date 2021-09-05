@@ -131,7 +131,11 @@
         android:id="@+id/profile"
         android:name="com.lookie.toy_front_2021.ui.Profile"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_loading"
+            app:destination="@id/loading" />
+    </fragment>
 
     <fragment
         android:id="@+id/mypage"

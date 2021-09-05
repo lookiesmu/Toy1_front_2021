@@ -1,18 +1,39 @@
 package com.lookie.toy_front_2021.model
 
-open class UserSend(
-    open val name : String,
-    open val phone : String,
-    open val username : String,
-    open val password : String?,
+data class UserSend(
+    val name : String,
+    val phone : String,
+    val username : String,
+    val password : String?,
 )
 
 
 data class UserReceive(
-    override val name : String,
-    override val phone : String,
-    override val username : String,
-    override val password : String?,
+    val name : String,
+    val phone : String,
+    val username : String,
+    val password : String?,
     val u_num : Long?,
     val role : String?,
-) : UserSend(name, phone, username, password)
+    val _links : Any?,
+)
+
+data class UserSimple(
+    val username: String,
+    val password: String,
+)
+
+data class Users(
+    val _embedded: UserList,
+    val _links: Any,
+)
+
+data class UserList(
+    val userList: List<UserReceive>,
+)
+
+data class UserPut(
+    val name: String,
+    val phone: String,
+    val password : String,
+)

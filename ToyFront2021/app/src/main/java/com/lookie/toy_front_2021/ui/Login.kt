@@ -1,5 +1,6 @@
 package com.lookie.toy_front_2021.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,8 +21,8 @@ class Login : Fragment() {
     private val model : MainViewModel by activityViewModels()
 
 
-    private lateinit var id : EditText
-    private lateinit var pw : EditText
+    private lateinit var etid : EditText
+    private lateinit var etpw : EditText
     private lateinit var screen : View
 
     override fun onCreateView(
@@ -38,8 +39,8 @@ class Login : Fragment() {
     }
 
     private fun viewBinding(v : View) {
-        id = v.findViewById(R.id.login_id)
-        pw = v.findViewById(R.id.login_pw)
+        etid = v.findViewById(R.id.login_id)
+        etpw = v.findViewById(R.id.login_pw)
         screen = v
     }
 
@@ -50,7 +51,10 @@ class Login : Fragment() {
             }
         }
         v.findViewById<TextView>(R.id.login_to).apply {
+
             setOnClickListener {
+                val idt = "${etid.text}"
+                val pwt = "${etpw.text}"
                 val main = (activity as MainActivity)
                 model.login(before = {
                     main.toggleLoading(true)
@@ -58,6 +62,13 @@ class Login : Fragment() {
                 }, after = { b ->
                     main.toggleLoading(false)
                     if (b) { // 로그인 성공시
+                        val shared =
+                            this.context.getSharedPreferences("Muleo", Context.MODE_PRIVATE)
+                        shared.edit().apply {
+                            putString("username", idt)
+                            putString("password", pwt)
+                            apply()
+                        }
                         main.toggleBar(true)
                         Toast.makeText(context, "어서오세요!", Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.action_login_to_question)
@@ -65,7 +76,7 @@ class Login : Fragment() {
                         screen.alpha = 1f
                         Toast.makeText(context, "로그인 실패!", Toast.LENGTH_SHORT).show()
                     }
-                })
+                }, id = idt, pw = pwt)
             }
         }
     }

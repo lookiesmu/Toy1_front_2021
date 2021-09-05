@@ -25,15 +25,21 @@ class Loading : Fragment() {
             toggleBar(on = false)// 로딩 화면이므로 와 bottom nav 를 숨깁니다.
         }
         val view = inflater.inflate(R.layout.fragment_loading, container, false)
-        model.loading { b ->
+        val shared = view.context.getSharedPreferences(
+            "Muleo", Context.MODE_PRIVATE
+        )
+        model.loading(
+            shared.getString("username", ".")!!, shared.getString("password", ".")!!
+        ) { b ->
             if (b) { // 서버 응답이 있을 경우
-                val isUserLogin = context?.getSharedPreferences(
-                    getString(R.string.pref_user_key),
+                val isUserLogin = view.context.getSharedPreferences(
+                    "Muleo",
                     Context.MODE_PRIVATE
-                )?.getInt("user_num", -1)
-                if (isUserLogin == -1) { // 로그인 하지 않았음
+                ).getString("username", ".")
+                if (isUserLogin == ".") { // 로그인 하지 않았음
                     findNavController().navigate(R.id.action_loading_to_login)
                 } else { // 로그인 한 적이 있음
+                    (activity as MainActivity).toggleBar(true)
                     findNavController().navigate(R.id.action_loading_to_question)
                 }
             } else { // 응답이 없을 경우

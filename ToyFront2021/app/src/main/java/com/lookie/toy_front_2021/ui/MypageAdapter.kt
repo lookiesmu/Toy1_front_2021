@@ -1,5 +1,6 @@
 package com.lookie.toy_front_2021.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,7 @@ class MypageAdapter(
     }
 
     override fun getItemCount() : Int {
+        Log.d("MypageAdapter", "${model.users.value}")
         return model.users.value?.size ?: 0
     }
 }
