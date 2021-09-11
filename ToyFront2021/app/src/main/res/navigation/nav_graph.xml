@@ -102,7 +102,13 @@
         tools:layout="@layout/fragment_answer_list">
         <argument
             android:name="qNum"
+            android:defaultValue="-1L"
             app:argType="long" />
+        <action
+            android:id="@+id/action_answerList_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
     </fragment>
 
     <fragment

@@ -1,8 +1,9 @@
 package com.lookie.toy_front_2021.ui
 
 import android.os.Bundle
-import android.util.Log
+import android.os.Message
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
@@ -63,13 +64,28 @@ class MainActivity : AppCompatActivity() {
      */
     private fun viewHandler() {
         NavigationUI.setupWithNavController(bottomNav, navController)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.question, R.id.login, R.id.join, R.id.profile, R.id.mypage, R.id.answerList, R.id.loading))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.question,
+                R.id.login,
+                R.id.join,
+                R.id.profile,
+                R.id.mypage,
+                R.id.answerList,
+                R.id.loading
+            )
+        )
         findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar_layout).apply {
             setupWithNavController(topBar, navController)
         }
         NavigationUI.setupWithNavController(topBar, navController, appBarConfiguration)
         topBar.setOnMenuItemClickListener {
-            it.onNavDestinationSelected(navController)
+            if (it.itemId == R.id.answerCalendar) {
+                Toast.makeText(this, "달력 미구현", Toast.LENGTH_SHORT).show()
+                false
+            } else {
+                it.onNavDestinationSelected(navController)
+            }
         }
 
         bottomNav.setOnItemSelectedListener {
@@ -110,9 +126,9 @@ class MainActivity : AppCompatActivity() {
         loading.visibility = visibility
     }
 
-    fun stop(after : () -> Unit) {
+    fun stop(message : String = "", after : () -> Unit, ) {
         MaterialAlertDialogBuilder(loading.context)
-            .setMessage("죄송합니다. 현재 이용 블가능 합니다.")
+            .setMessage(if (message == "") "죄송합니다. 현재 이용 블가능 합니다." else message)
             .setPositiveButton("예") { _, _ ->
                 after()
             }
@@ -122,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    fun toggleCalendar(on: Boolean) {
+    fun toggleCalendar(on : Boolean) {
         topBar.menu[0].isVisible = on
     }
 }

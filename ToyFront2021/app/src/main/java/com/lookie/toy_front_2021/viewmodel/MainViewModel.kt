@@ -4,10 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lookie.toy_front_2021.model.Question
-import com.lookie.toy_front_2021.model.UserReceive
-import com.lookie.toy_front_2021.model.UserSend
-import com.lookie.toy_front_2021.model.UserSimple
+import com.lookie.toy_front_2021.model.*
 import com.lookie.toy_front_2021.network.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -15,7 +12,7 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
     var token : String? = null
 
-    var currentQNUm: Long? = null
+    var currentQNUm : Long? = null
 
     var questions : MutableLiveData<MutableList<Question>> = MutableLiveData(mutableListOf())
         set(value) {
@@ -41,7 +38,9 @@ class MainViewModel : ViewModel() {
                     Log.d("MainViewModel", "q: ${q.size}")
                     val u = getUsers(token = token!!)._embedded.userList
                     Log.d("MainViewModel", "u: ${u.size}")
+                    questions.value?.clear()
                     questions.value?.addAll(q)
+                    users.value?.clear()
                     users.value?.addAll(u)
                     after(true)
                 } catch (e : Exception) {
@@ -61,7 +60,9 @@ class MainViewModel : ViewModel() {
             Log.d("MainViewModel", "login ${id}:${pw}")
             try {
                 token = postLogin(UserSimple(username = id, password = pw))
+                questions.value?.clear()
                 questions.value?.addAll(getQuestions(token = token!!))
+                users.value?.clear()
                 users.value?.addAll(getUsers(token = token!!)._embedded.userList)
                 after(true)
             } catch (e : Exception) {
@@ -84,7 +85,9 @@ class MainViewModel : ViewModel() {
             try {
                 postUser(UserSend(name = name, phone = phone, username = id, password = pw1))
                 token = postLogin(UserSimple(username = id, password = pw1))
+                questions.value?.clear()
                 questions.value?.addAll(getQuestions(token = token!!))
+                users.value?.clear()
                 users.value?.addAll(getUsers(token = token!!)._embedded.userList)
                 after(true)
             } catch (e : Exception) {
@@ -94,11 +97,17 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun answer(before : () -> Unit, after : (Boolean) -> Unit) {
+    fun answer(before : () -> Unit, after : (Boolean) -> Unit, answer: AnswerSimple, qNum: Long) {
         viewModelScope.launch {
             before()
-            delay(3000) // 네트워크 콜
-            after(true) // 일단 무조건 성공임을 표시함.
+            try {
+                val a = postAnswer(answer = answer, q_num = qNum, token = token!!)
+                questions.value!!.find { it.q_num == qNum }!!.answerList.add(a)
+                after(true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                after(false)
+            }
         }
     }
 

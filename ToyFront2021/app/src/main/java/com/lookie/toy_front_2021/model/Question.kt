@@ -6,7 +6,7 @@ data class Question(
     val q_num: Long,
     val content: String,
     val user: UserReceive,
-    val answerList: List<Answer>,
+    val answerList: MutableList<Answer>,
 )
 
 data class Answer(

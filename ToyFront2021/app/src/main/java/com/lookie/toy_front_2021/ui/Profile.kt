@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
@@ -56,25 +57,26 @@ class Profile : Fragment() {
 
     private fun viewHandler() {
         save.setOnClickListener {
-            val main = (activity as MainActivity)
-            val etpw = pw.text
-            val u = it.context.getSharedPreferences("Muleo", Context.MODE_PRIVATE)
-            model.delete(before = {
-                main.toggleLoading(true)
-                screen.alpha = 0.3f
-            }, after = { b ->
-                screen.alpha = 1f
-                main.toggleLoading(false)
-                if (b) {
-                    u.edit {
-                        putString("password", "$etpw")
-                        apply()
-                    }
-                    findNavController().navigate(R.id.loading)
-                } else {
-                    main.stop { }
-                }
-            }, username = userReceive.username)
+            Toast.makeText(it.context, "미구현", Toast.LENGTH_SHORT).show()
+//            val main = (activity as MainActivity)
+//            val etpw = pw.text
+//            val u = it.context.getSharedPreferences("Muleo", Context.MODE_PRIVATE)
+//            model.delete(before = {
+//                main.toggleLoading(true)
+//                screen.alpha = 0.3f
+//            }, after = { b ->
+//                screen.alpha = 1f
+//                main.toggleLoading(false)
+//                if (b) {
+//                    u.edit {
+//                        putString("password", "$etpw")
+//                        apply()
+//                    }
+//                    findNavController().navigate(R.id.loading)
+//                } else {
+//                    main.stop { }
+//                }
+//            }, username = userReceive.username)
         }
         delete.setOnClickListener {
             val main = (activity as MainActivity)
@@ -94,7 +96,7 @@ class Profile : Fragment() {
                     }
                     findNavController().navigate(R.id.loading)
                 } else {
-                    main.stop { }
+                    main.stop {  }
                 }
             }, username = u!!)
         }

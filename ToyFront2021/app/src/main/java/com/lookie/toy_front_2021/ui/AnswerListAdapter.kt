@@ -1,27 +1,29 @@
 package com.lookie.toy_front_2021.ui
 
-import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lookie.toy_front_2021.R
+import com.lookie.toy_front_2021.model.Question
 import com.lookie.toy_front_2021.viewmodel.MainViewModel
 
 class AnswerListAdapter(
     private val model : MainViewModel,
-    private val itemHandler : (String) -> Unit,
+    private val itemHandler : (Long) -> Unit,
+    private val q : Question,
 ) : RecyclerView.Adapter<AnswerListAdapter.ViewHolder>() {
+
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val screen : View = view
-        val userName : TextView = view.findViewById(R.id.user_name)
-        val answer : TextView = view.findViewById(R.id.user_phone)
+        val answerNum : TextView = view.findViewById(R.id.answer_num)
+        val answerContent : TextView = view.findViewById(R.id.answer_content)
 
         init {
-            userName
-            answer
+            answerNum
+            answerContent
         }
     }
 
@@ -31,11 +33,15 @@ class AnswerListAdapter(
     }
 
     override fun onBindViewHolder(holder : ViewHolder, position : Int) {
-        // TODO("Not yet implemented")
+        val a = q.answerList[position]
+        holder.answerNum.text = a.a_num.toString()
+        holder.answerContent.text = a.content
+        holder.screen.setOnClickListener {
+            itemHandler(0L)
+        }
     }
 
     override fun getItemCount() : Int {
-        return 0
-        // TODO("Not yet implemented")
+        return q.answerList.size
     }
 }
